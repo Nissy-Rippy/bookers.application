@@ -1,6 +1,15 @@
 
   <h1>Editing Book</h1>
   <main>
+   
+  <% if @book.errors.any? %>
+   <%= @book.errors.count %>件のエラーが発生しました
+    <% @book.errors.full_messages.each do |message| %>
+     <%= message %>
+    <% end %>
+  <% end %>
+  
+  
    <div class="edit-box">
     <%= form_with model:@book,local:true do |f| %>
     

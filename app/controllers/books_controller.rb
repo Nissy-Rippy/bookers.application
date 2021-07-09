@@ -30,8 +30,8 @@ class BooksController < ApplicationController
    if book.save
        redirect_to(book_path(book.id))
   else
-      render :show
-   end
+       render :show
+  end
 
     flash[:notice] = "Book was successfully updated."
 
