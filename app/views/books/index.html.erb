@@ -1,19 +1,19 @@
 
  <h1>Books</h1>
-  
-  
+
+
  <table>
-    
+
    <thead>
-     
+
     <tr>
-  
+
     <th>Title</th>
     <th>Body</th>
     <th colspan="3"></th>
 
     </tr>
-    
+
    </thead>
 
 <tbody>
@@ -32,16 +32,19 @@
 
 
 <div clas="new-heading"><h2>New Book</h2></div>
-<% if @book.errors.any? %>
-  <%= @book.errors.count %>件のエラーが発生しました
-  <% @book.errors.full_messages.each do |message| %>
-    <%= message %>
-  <% end %>
-<% end %>
 
+
+  <% if @book.errors.any? %>
+  <%= @book.errors.count %>件のerrorが発生しました</br>
+  <% @book.errors.full_messages.each do |message| %>
+    <%= message %></br>
+  <% end %>
+  <% end %>
 <div class="box">
 
   <%= form_with model:@book,local:true do |f| %>
+
+
   <p class="box-title">Title</p>
   <%= f.text_field :title %>
   <p class="box-title">Body</p>
@@ -50,7 +53,7 @@
   <%= f.submit "Create Book"%>
   </div>
   <% end %>
-  
+
 </div>
 
 
